@@ -44,7 +44,7 @@ buttonStart.addEventListener("click", function(){
 
     for (let index = 0; index < 16; index++) {
     //creo una variabile che ci restituisce un numero randomico tra 1 e 16
-        const bombNumber = Math.ceil(Math.random() * 16)+ 1
+        const bombNumber = Math.ceil(Math.random() * 100) + 1;
         bombCell.push(bombNumber);
         
     }
@@ -62,19 +62,26 @@ buttonStart.addEventListener("click", function(){
         const thisCell = cellEl[j];
         console.log(thisCell)
 
-        if (condition) {
+        if (cellEl == bombCell) {
+            
+            thisCell.addEventListener("click", function() {
+                thisCell.classList.toggle("bg_red")
+                // this.classList.add("active")
+                console.log(`You're fu**ed`)
+                
+            })
 
+        } else {
+            
             thisCell.addEventListener("click", function() {
                 thisCell.classList.toggle("bg_lightblue")
                 // this.classList.add("active")
                 console.log(`You clicked number ${j + 1}`)
                 
-            
-        } else {
-            
+            })
+
         }
-       
-        })
+        
 
     };
 
