@@ -37,9 +37,17 @@ buttonStart.addEventListener("click", function(){
         
     }
 
+    //creo un array vuoto per inserire i numeri casuali
+    const bombCell = []
     
-    
+    console.log(bombCell);
 
+    for (let index = 0; index < 16; index++) {
+    //creo una variabile che ci restituisce un numero randomico tra 1 e 16
+        const bombNumber = Math.ceil(Math.random() * 16)+ 1
+        bombCell.push(bombNumber);
+        
+    }
   // seleziono una cella che ha classe cell e active
 
     const cellEl = document.querySelectorAll(".cell")
@@ -53,12 +61,21 @@ buttonStart.addEventListener("click", function(){
         
         const thisCell = cellEl[j];
         console.log(thisCell)
-        thisCell.addEventListener("click", function() {
-            thisCell.classList.toggle("bg_lightblue")
-            // this.classList.add("active")
-            console.log(`You clicked number ${j + 1}`)
+
+        if (condition) {
+
+            thisCell.addEventListener("click", function() {
+                thisCell.classList.toggle("bg_lightblue")
+                // this.classList.add("active")
+                console.log(`You clicked number ${j + 1}`)
+                
             
+        } else {
+            
+        }
+       
         })
+
     };
 
    
