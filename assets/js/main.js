@@ -28,6 +28,7 @@ container.innerHTML = ``;
 buttonStart.addEventListener("click", function(){
    
     container.innerHTML = ``;
+
     for (let i = 1; i <= nMax; i++) {
         
         const cell = `<div class="cell">${i}</div>`;
@@ -42,10 +43,16 @@ buttonStart.addEventListener("click", function(){
     
     console.log(bombCell);
 
-    for (let index = 0; index < 16; index++) {
+    for (let index = 1; index <= 16; index++) {
     //creo una variabile che ci restituisce un numero randomico tra 1 e 16
-        const bombNumber = Math.ceil(Math.random() * 100) + 1;
-        bombCell.push(bombNumber);
+        const bombNumber = Math.ceil(Math.random() * 100);
+
+        if (bombCell !== nMax) {
+
+            bombCell.push(bombNumber);
+            
+        } 
+        
         
     }
   // seleziono una cella che ha classe cell e active
