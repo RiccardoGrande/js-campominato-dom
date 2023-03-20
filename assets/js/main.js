@@ -69,7 +69,7 @@ buttonStart.addEventListener("click", function(){
         const thisCell = cellEl[j];
         console.log(thisCell)
 
-        if (cellEl == bombCell) {
+        if (thisCell == bombCell) {
             
             thisCell.addEventListener("click", function() {
                 thisCell.classList.toggle("bg_red")
